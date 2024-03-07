@@ -1,11 +1,13 @@
 package com.example.Service;
 
-import com.example.Entity.Employee;
-import com.example.Repository.EmployeeRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.example.Entity.Employee;
+import com.example.Exception.ResourceNotFoundException;
+import com.example.Repository.EmployeeRepository;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
@@ -19,7 +21,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public Employee updateEmployee(Employee employee, long id) {
-        Employee emp=employeeRepository.findById(id).get();
+        Employee emp=employeeRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Employee id is not found:"+id));
         emp.setName(employee.getName());
         emp.setSalary(employee.getSalary());
         emp.setAge(employee.getAge());
@@ -31,12 +33,18 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public void deleteEmployee(long id) {
-        employeeRepository.deleteById(id);
+    	try {
+    		employeeRepository.deleteById(id);
+    	}
+    	catch(Exception ex)
+    	{
+    		throw new ResourceNotFoundException("Employee Id is not found:"+id);
+    	}
     }
 
     @Override
     public Employee getOneEmployee(long id) {
-        return employeeRepository.findById(id).get();
+        return employeeRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Employee id is not found:"+id));
     }
 
     @Override
