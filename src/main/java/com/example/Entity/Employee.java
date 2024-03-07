@@ -1,7 +1,11 @@
 package com.example.Entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 //@Getter // avoiding getter methods
 //@Setter // avoiding setter methods
@@ -9,6 +13,7 @@ import lombok.*;
 //@NoArgsConstructor  //avoiding public default constructor
 //@ToString  //avoiding toString method
 //@Data  //avoiding setter and getter methods
+
 @Entity
 @Table(name="employees")
 public class Employee {
