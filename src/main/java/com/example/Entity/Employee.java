@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 //@Getter // avoiding getter methods
 //@Setter // avoiding setter methods
@@ -23,6 +26,8 @@ public class Employee {
     private long id;
 
     @Column(name="e_name")
+    @NotNull(message = "Name cannot be null")
+    @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters")
     private String name;
 
     @Column(name="e_salary")
@@ -32,6 +37,8 @@ public class Employee {
     private int age;
 
     @Column(name="e_email")
+    @NotNull(message = "Email cannot be null")
+    @Email(message = "Invalid email format")
     private String email;
 
     @Column(name="e_health")

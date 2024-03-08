@@ -5,6 +5,7 @@ import com.example.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -15,7 +16,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping(value="/save")
-    public String savee(@RequestBody Employee employee)
+    public String savee(@Valid @RequestBody Employee employee)
     {
         Employee emp=employeeService.saveEmployee(employee);
         String msg=null;
@@ -30,7 +31,7 @@ public class EmployeeController {
     }
 
     @PutMapping(value="/update/{id}")
-    public String updatee(@RequestBody Employee employee, @PathVariable long id)
+    public String updatee(@Valid @RequestBody Employee employee, @PathVariable long id)
     {
         employeeService.updateEmployee(employee,id);
         return "Updated Successfully";
