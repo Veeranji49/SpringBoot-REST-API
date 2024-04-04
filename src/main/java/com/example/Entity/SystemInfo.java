@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 public class SystemInfo {
+
+    private double cpuUsagePercentage;
     private String ipAddress;
     private String hostname;
     private MemoryInfo memoryInfo;
@@ -20,16 +22,12 @@ public class SystemInfo {
     private String userHomeDirectory;
 
     //PDC
-    public SystemInfo() {}
+    public SystemInfo() {
+    }
 
     //PPC
-    public SystemInfo(String ipAddress, String hostname, MemoryInfo memoryInfo, DiskInfo diskInfo, JvmInfo jvmInfo,
-                      int processors, String architecture, LocalDateTime currentTime, String classLoaderDetails,
-                      Map<Thread.State, Integer> threadDetails, Map<String, String> environmentVariables,
-                      Map<String, String> systemProperties, String operatingSystem, String userHomeDirectory) {
-
-        super();
-
+    public SystemInfo(double cpuUsagePercentage, String ipAddress, String hostname, MemoryInfo memoryInfo, DiskInfo diskInfo, JvmInfo jvmInfo, int processors, String architecture, LocalDateTime currentTime, String classLoaderDetails, Map<Thread.State, Integer> threadDetails, Map<String, String> environmentVariables, Map<String, String> systemProperties, String operatingSystem, String userHomeDirectory) {
+        this.cpuUsagePercentage = cpuUsagePercentage;
         this.ipAddress = ipAddress;
         this.hostname = hostname;
         this.memoryInfo = memoryInfo;
@@ -46,8 +44,14 @@ public class SystemInfo {
         this.userHomeDirectory = userHomeDirectory;
     }
 
+    public double getCpuUsagePercentage() {
+        return cpuUsagePercentage;
+    }
 
-    //PSM & PGM
+    public void setCpuUsagePercentage(double cpuUsagePercentage) {
+        this.cpuUsagePercentage = cpuUsagePercentage;
+    }
+
     public String getIpAddress() {
         return ipAddress;
     }
@@ -148,7 +152,6 @@ public class SystemInfo {
         return operatingSystem;
     }
 
-
     public void setOperatingSystem(String operatingSystem) {
         this.operatingSystem = operatingSystem;
     }
@@ -160,5 +163,4 @@ public class SystemInfo {
     public void setUserHomeDirectory(String userHomeDirectory) {
         this.userHomeDirectory = userHomeDirectory;
     }
-
 }

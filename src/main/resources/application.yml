@@ -6,7 +6,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: 'jdbc:postgresql://localhost:5432/springboot_rest_api'
     username: postgres
-    password: veeranji
+    password: master
 
   jpa:
     show-sql: true

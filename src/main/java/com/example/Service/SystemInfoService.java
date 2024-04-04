@@ -28,6 +28,11 @@ public class SystemInfoService {
         SystemInfo systemInfo = new SystemInfo();
 
         try {
+
+            com.sun.management.OperatingSystemMXBean osBean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+            double cpuUsagePercentage = osBean.getProcessCpuLoad() * 100;
+            systemInfo.setCpuUsagePercentage(cpuUsagePercentage);
+
             // Get IP Address and Hostname
             InetAddress localHost = InetAddress.getLocalHost();
             systemInfo.setIpAddress(localHost.getHostAddress());
