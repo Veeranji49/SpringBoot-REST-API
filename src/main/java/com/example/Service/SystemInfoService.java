@@ -29,6 +29,7 @@ public class SystemInfoService {
 
         try {
 
+            // CPU usage percentage
             com.sun.management.OperatingSystemMXBean osBean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
             double cpuUsagePercentage = osBean.getProcessCpuLoad() * 100;
             systemInfo.setCpuUsagePercentage(cpuUsagePercentage);
@@ -70,13 +71,16 @@ public class SystemInfoService {
             systemInfo.setArchitecture(System.getProperty("os.arch"));
             systemInfo.setCurrentTime(LocalDateTime.now(ZoneId.systemDefault()));
 
+            // Operating System details
             String osInfo = System.getProperty("os.name") + " " + System.getProperty("os.version");
             systemInfo.getMemoryInfo().setOperatingSystem(osInfo);
 
+            // classLoader details
             ClassLoader classLoader = SystemInfo.class.getClassLoader();
             String classLoaderDetails = classLoader.toString();
             systemInfo.setClassLoaderDetails(classLoaderDetails);
 
+            // System Threads information
             ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
             ThreadInfo[] threadInfos = threadMXBean.getThreadInfo(threadMXBean.getAllThreadIds());
 
