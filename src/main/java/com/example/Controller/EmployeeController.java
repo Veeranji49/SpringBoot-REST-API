@@ -4,6 +4,8 @@ import com.example.Entity.Employee;
 import com.example.Service.EmployeeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +19,8 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
+
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
     @GetMapping(value="/msg")
     @ApiOperation("Get a greeting message")
@@ -46,6 +50,7 @@ public class EmployeeController {
     public String updatee(@Valid @RequestBody Employee employee, @PathVariable long id)
     {
         employeeService.updateEmployee(employee,id);
+        logger.error("failed in updation");
         return "Updated Successfully";
     }
 
@@ -54,6 +59,7 @@ public class EmployeeController {
     public String deletee(@PathVariable long id)
     {
         employeeService.deleteEmployee(id);
+        logger.error("failed in deletion");
         return "deleted successfully";
     }
 

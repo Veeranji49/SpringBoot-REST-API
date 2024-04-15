@@ -92,32 +92,50 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>com.github.wvengen</groupId>
                 <artifactId>proguard-maven-plugin</artifactId>
-                <version>2.3.1</version>
+                <version>2.2.0</version> &lt;!&ndash; Use the latest compatible version &ndash;&gt;
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>proguard</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>com/example</mainClass>
-                        </manifest>
-                    </archive>
+                    <proguardVersion>7.1.1</proguardVersion> &lt;!&ndash; Use the latest version of ProGuard &ndash;&gt;
+                    <obfuscate>true</obfuscate>
+                    <injar>${project.build.finalName}.jar</injar>
+                    <outjar>${project.build.finalName}-obfuscated.jar</outjar>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                    <options>
+                        <option>-include proguard.conf</option>
+                    </options>
                 </configuration>
-                <!-- Other plugin elements -->
-            </plugin>
+            </plugin>-->
+                    <plugin>
+                        <groupId>com.github.wvengen</groupId>
+                        <artifactId>proguard-maven-plugin</artifactId>
+                        <version>2.2.0</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>proguard</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <proguardVersion>7.1.1</proguardVersion> <!-- Make sure to use a compatible version with Java 17 -->
+                                <options>
+                                    <option>-keep class com.example.** { *; }</option> <!-- Keep specific classes unobfuscated -->
+                                    <option>-dontoptimize</option> <!-- Optional: Turn off optimization to make debugging easier -->
+                                    <!-- Add more options as per your requirements -->
+                                </options>
+                        </configuration>
+                    </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
