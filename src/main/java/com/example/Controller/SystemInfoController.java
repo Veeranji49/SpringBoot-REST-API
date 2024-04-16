@@ -1,7 +1,7 @@
 package com.example.Controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.Api;
+//import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import com.example.Service.SystemInfoService;
 
 @RestController
 @RequestMapping("/api/v1/system-details")
-@Api(tags = "SystemInfo Controller", description = "To checking System Resources")
+//@Api(tags = "SystemInfo Controller", description = "To checking System Resources")
 public class SystemInfoController {
 
     @Autowired
@@ -23,14 +23,14 @@ public class SystemInfoController {
     private static final Logger logger = LoggerFactory.getLogger(SystemInfoController.class);
 
     @GetMapping(value="/system-msg")
-    @ApiOperation("Greeting message by system")
+    //@ApiOperation("Greeting message by system")
     public String msg()
     {
         return "Welcome to the Information of the System";
     }
 
     @GetMapping("/systemInfo")
-    @ApiOperation("To Retrieving the system resources")
+    //@ApiOperation("To Retrieving the system resources")
     public SystemInfo getSystemInfo() {
         return systemInfoService.getSystemInfo();
     }
