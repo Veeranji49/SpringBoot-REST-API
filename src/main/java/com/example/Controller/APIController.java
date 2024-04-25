@@ -285,6 +285,11 @@ public class APIController {
         return text.toLowerCase();
     }
 
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/find-index-of-element?array=1,2,3,4,5&element=3   **//
+    @GetMapping(value="/find-index-of-element")
+    public int findIndexOfElement(@RequestParam List<Integer> array, @RequestParam int element) {
+        return array.indexOf(element);
+    }
 
 
     //**   http://localhost:9999/springboot_restapi/api/v1/practice/sum-of-array?numbers=1,2,3,4,5   **//
