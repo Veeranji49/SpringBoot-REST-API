@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -289,6 +290,27 @@ public class APIController {
     @GetMapping(value="/find-index-of-element")
     public int findIndexOfElement(@RequestParam List<Integer> array, @RequestParam int element) {
         return array.indexOf(element);
+    }
+
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/create-directory?directoryPath=C:/Users/mwin2/Desktop/mobile
+    @PostMapping(value="/create-directory")
+    public boolean createDirectory(@RequestParam String directoryPath) {
+        File directory = new File(directoryPath);
+        return directory.mkdir();
+    }
+
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/delete-file?filePath=C:/Users/mwin2/Desktop/mobile
+    @DeleteMapping(value="/delete-file")
+    public boolean deleteFile(@RequestParam String filePath) {
+        File file = new File(filePath);
+        return file.delete();
+    }
+
+    //**  http://localhost:9999/springboot_restapi/api/v1/practice/current-time
+    @GetMapping("/current-time")
+    public String getCurrentTime() {
+        LocalDateTime now = LocalDateTime.now();
+        return now.toString();
     }
 
 
