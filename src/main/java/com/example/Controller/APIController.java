@@ -273,6 +273,18 @@ public class APIController {
         return Integer.parseInt(octal, 8);
     }
 
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/convert-to-uppercase?text=hello   **//
+    @GetMapping(value="/convert-to-uppercase")
+    public String convertToUppercase(@RequestParam String text) {
+        return text.toUpperCase();
+    }
+
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/convert-to-lowercase?text=HELLO   **//
+    @GetMapping(value="/convert-to-lowercase")
+    public String convertToLowercase(@RequestParam String text) {
+        return text.toLowerCase();
+    }
+
 
 
     //**   http://localhost:9999/springboot_restapi/api/v1/practice/sum-of-array?numbers=1,2,3,4,5   **//
