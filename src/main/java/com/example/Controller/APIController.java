@@ -313,6 +313,75 @@ public class APIController {
         return now.toString();
     }
 
+    // Convert seconds to minutes
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/seconds-to-minutes?seconds=360
+    @GetMapping(value="/seconds-to-minutes")
+    public double convertSecondsToMinutes(@RequestParam int seconds) {
+        return seconds / 60.0;
+    }
+
+    // Convert minutes to hours
+    //**    http://localhost:9999/springboot_restapi/api/v1/practice/minutes-to-hours?minutes=120
+    @GetMapping(value="/minutes-to-hours")
+    public double convertMinutesToHours(@RequestParam int minutes) {
+        return minutes / 60.0;
+    }
+
+    // Convert hours to days
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/hours-to-days?hours=48
+    @GetMapping(value="/hours-to-days")
+    public double convertHoursToDays(@RequestParam int hours) {
+        return hours / 24.0;
+    }
+
+    // Convert days to weeks
+    //**    http://localhost:9999/springboot_restapi/api/v1/practice/days-to-weeks?days=67
+    @GetMapping(value="/days-to-weeks")
+    public double convertDaysToWeeks(@RequestParam int days) {
+        return days / 7.0;
+    }
+
+    // Convert kilograms to pounds
+    //**    http://localhost:9999/springboot_restapi/api/v1/practice/kilograms-to-pounds?kilograms=60
+    @GetMapping(value="/kilograms-to-pounds")
+    public double convertKilogramsToPounds(@RequestParam double kilograms) {
+        return kilograms * 2.20462;
+    }
+
+    // Convert pounds to kilograms
+    //**    http://localhost:9999/springboot_restapi/api/v1/practice/pounds-to-kilograms?pounds=132
+    @GetMapping(value="/pounds-to-kilograms")
+    public double convertPoundsToKilograms(@RequestParam double pounds) {
+        return pounds / 2.20462;
+    }
+
+    // Check if a number is an even number
+    //**    http://localhost:9999/springboot_restapi/api/v1/practice/is-even?number=232
+    @GetMapping(value="/is-even")
+    public boolean isEven(@RequestParam int number) {
+        return number % 2 == 0;
+    }
+
+    // Check if a number is an odd number
+    //**    http://localhost:9999/springboot_restapi/api/v1/practice/is-odd?number=232
+    @GetMapping(value="/is-odd")
+    public boolean isOdd(@RequestParam int number) {
+        return number % 2 != 0;
+    }
+
+    // Convert a temperature from Celsius to Fahrenheit
+    //**    http://localhost:9999/springboot_restapi/api/v1/practice/celsius-to-fahrenheit?celsius=41
+    @GetMapping(value="/celsius-to-fahrenheit")
+    public double celsiusToFahrenheit(@RequestParam double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    // Convert a temperature from Fahrenheit to Celsius
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/fahrenheit-to-celsius?fahrenheit=120
+    @GetMapping(value="/fahrenheit-to-celsius")
+    public double fahrenheitToCelsius(@RequestParam double fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
+    }
 
     //**   http://localhost:9999/springboot_restapi/api/v1/practice/sum-of-array?numbers=1,2,3,4,5   **//
     /*@PostMapping(value="/sum-of-array")
