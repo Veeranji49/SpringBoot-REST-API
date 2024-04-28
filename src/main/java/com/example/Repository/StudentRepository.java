@@ -1,9 +1,9 @@
 package com.example.Repository;
 
-import com.example.Entity.DB.Employee;
+import com.example.Entity.DB.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee,Long> {
+public interface StudentRepository extends JpaRepository<Student, Long> {
 }

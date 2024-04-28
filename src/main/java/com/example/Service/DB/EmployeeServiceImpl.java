@@ -1,4 +1,4 @@
-package com.example.Service;
+package com.example.Service.DB;
 
 import java.util.List;
 
@@ -7,12 +7,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.example.Entity.Employee;
+import com.example.Entity.DB.Employee;
 import com.example.Exception.ResourceNotFoundException;
 import com.example.Repository.EmployeeRepository;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     private EmployeeRepository employeeRepository;

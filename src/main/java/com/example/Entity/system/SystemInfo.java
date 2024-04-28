@@ -1,4 +1,4 @@
-package com.example.Entity;
+package com.example.Entity.system;
 
 import java.time.LocalDateTime;
 import java.util.Map;

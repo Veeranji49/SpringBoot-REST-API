@@ -1,4 +1,4 @@
-package com.example.Entity;
+package com.example.Entity.system;
 
 public class MemoryInfo {
 

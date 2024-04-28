@@ -1,7 +1,7 @@
-package com.example.Controller;
+package com.example.Controller.DB;
 
-import com.example.Entity.Employee;
-import com.example.Service.EmployeeService;
+import com.example.Entity.DB.Employee;
+import com.example.Service.DB.EmployeeService;
 //import io.swagger.annotations.Api;
 //import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;

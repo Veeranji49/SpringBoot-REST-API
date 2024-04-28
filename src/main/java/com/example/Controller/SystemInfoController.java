@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Entity.SystemInfo;
-import com.example.Service.SystemInfoService;
+import com.example.Entity.system.SystemInfo;
+import com.example.Service.system.SystemInfoService;
 
 @RestController
 @RequestMapping("/api/v1/system-details")

@@ -1,9 +1,9 @@
-package com.example.Service;
+package com.example.Service.system;
 
-import com.example.Entity.DiskInfo;
-import com.example.Entity.JvmInfo;
-import com.example.Entity.MemoryInfo;
-import com.example.Entity.SystemInfo;
+import com.example.Entity.system.DiskInfo;
+import com.example.Entity.system.JvmInfo;
+import com.example.Entity.system.MemoryInfo;
+import com.example.Entity.system.SystemInfo;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
