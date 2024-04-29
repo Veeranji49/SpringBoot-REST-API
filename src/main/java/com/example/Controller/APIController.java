@@ -395,6 +395,12 @@ public class APIController {
         return input.contains(substring);
     }
 
+    //** http://localhost:9999/springboot_restapi/api/v1/practice/calculate-total-salary?basicSalary=1000&da=200&hra=300
+    @GetMapping(value="calculate-total-salary")
+    public double calculateTotalSalary(@RequestParam double basicSalary, @RequestParam double da,
+                                       @RequestParam double hra) {
+        return basicSalary + da + hra;
+    }
 
     //**   http://localhost:9999/springboot_restapi/api/v1/practice/sum-of-array?numbers=1,2,3,4,5   **//
     /*@PostMapping(value="/sum-of-array")
