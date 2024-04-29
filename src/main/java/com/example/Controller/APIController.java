@@ -313,6 +313,12 @@ public class APIController {
         return now.toString();
     }
 
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/current-date
+    @GetMapping(value="/current-date")
+    public LocalDate getCurrentDate() {
+        return LocalDate.now();
+    }
+
     // Convert seconds to minutes
     //**   http://localhost:9999/springboot_restapi/api/v1/practice/seconds-to-minutes?seconds=360
     @GetMapping(value="/seconds-to-minutes")
@@ -382,6 +388,13 @@ public class APIController {
     public double fahrenheitToCelsius(@RequestParam double fahrenheit) {
         return (fahrenheit - 32) * 5 / 9;
     }
+
+    //** http://localhost:9999/springboot_restapi/api/v1/practice/contains-substring?input=veeranji&substring=veer
+    @GetMapping(value="/contains-substring")
+    public boolean containsSubstring(@RequestParam String input, @RequestParam String substring) {
+        return input.contains(substring);
+    }
+
 
     //**   http://localhost:9999/springboot_restapi/api/v1/practice/sum-of-array?numbers=1,2,3,4,5   **//
     /*@PostMapping(value="/sum-of-array")
