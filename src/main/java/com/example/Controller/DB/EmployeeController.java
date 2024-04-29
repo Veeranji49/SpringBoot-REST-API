@@ -42,18 +42,18 @@ public class EmployeeController {
 
     @PutMapping(value="/update/{id}")
     //@ApiOperation("To updating the employee details")
-    public ResponseEntity<Employee> updatee(@Valid @RequestBody Employee employee, @PathVariable long id)
+    public ResponseEntity<String> updatee(@Valid @RequestBody Employee employee, @PathVariable long id)
     {
         employeeService.updateEmployee(employee,id);
-        return new ResponseEntity<>(employee, HttpStatus.OK);
+        return  ResponseEntity.ok("Updated successfully");
     }
 
     @DeleteMapping("/delete/{id}")
     //@ApiOperation("To deleting the employee details")
-    public ResponseEntity<Employee> deletee(@PathVariable long id)
+    public ResponseEntity<String> deletee(@PathVariable long id)
     {
        employeeService.deleteEmployee(id);
-       return new ResponseEntity<>(HttpStatus.OK);
+       return  ResponseEntity.ok("deleted successfully");
     }
 
     @GetMapping(value="/getone/{id}")
