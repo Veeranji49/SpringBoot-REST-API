@@ -58,4 +58,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.findAll(pageable);
     }
 
+    @Override
+    public long getEmployeesCount() {
+        return employeeRepository.count();
+    }
+
 }

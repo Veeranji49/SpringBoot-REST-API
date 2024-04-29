@@ -20,4 +20,6 @@ public interface EmployeeService {
 
     public Page<Employee> findAll(Pageable pageable);
 
+    public long getEmployeesCount();
+
 }

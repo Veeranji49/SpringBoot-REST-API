@@ -77,4 +77,10 @@ public class EmployeeController {
         Page<Employee> pages = employeeService.findAll(pageable);
         return ResponseEntity.ok().body(pages);
     }
+
+    @GetMapping(value="/count")
+    public ResponseEntity<Long> count() {
+        long count = employeeService.getEmployeesCount();
+        return new ResponseEntity<>(count, HttpStatus.OK);
+    }
 }
