@@ -473,7 +473,7 @@ public class APIController {
         return directory.exists() && directory.isDirectory();
     }
 
-    //**   http://localhost:9999/springboot_restapi/api/v1/practice/file-last-modified-time?filePath=C:/Windows/System32/drivers/etc/hosts
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/file-last-modified-time?filePath=C:/Users/mwin2/Desktop/veeranji
     @GetMapping(value="/file-last-modified-time")
     public long getFileLastModifiedTime(@RequestParam String filePath) {
         File file = new File(filePath);

@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,50 +35,41 @@ public class EmployeeController {
 
     @PostMapping(value="/save")
     //@ApiOperation("To posting the employee details")
-    public String savee(@Valid @RequestBody Employee employee)
-    {
-        Employee emp=employeeService.saveEmployee(employee);
-        String msg=null;
-        if(null!=emp)
-        {
-            msg="Successfully saved";
-        }
-        else {
-            msg="failed in insertion";
-        }
-        return msg;
+    public ResponseEntity<Employee> savee(@Valid @RequestBody Employee employee) {
+        Employee emp = employeeService.saveEmployee(employee);
+        return new ResponseEntity<>(emp, HttpStatus.CREATED);
     }
 
     @PutMapping(value="/update/{id}")
     //@ApiOperation("To updating the employee details")
-    public String updatee(@Valid @RequestBody Employee employee, @PathVariable long id)
+    public ResponseEntity<Employee> updatee(@Valid @RequestBody Employee employee, @PathVariable long id)
     {
         employeeService.updateEmployee(employee,id);
-        logger.error("failed in updation");
-        return "Updated Successfully";
+        return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
     //@ApiOperation("To deleting the employee details")
-    public String deletee(@PathVariable long id)
+    public ResponseEntity<Employee> deletee(@PathVariable long id)
     {
-        employeeService.deleteEmployee(id);
-        logger.error("failed in deletion");
-        return "deleted successfully";
+       employeeService.deleteEmployee(id);
+       return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping(value="/getone/{id}")
     //@ApiOperation("getting the one employee details")
-    public Employee getOne(@PathVariable long id)
+    public ResponseEntity<Employee> getOne(@PathVariable long id)
     {
-        return employeeService.getOneEmployee(id);
+        Employee emp = employeeService.getOneEmployee(id);
+        return new ResponseEntity<>(emp, HttpStatus.OK);
     }
 
     @GetMapping(value="/getall")
     //@ApiOperation("Getting all the employee details")
-    public List<Employee> getall()
+    public ResponseEntity<List<Employee>> getall()
     {
-        return employeeService.getAllEmployees();
+        List<Employee> list = employeeService.getAllEmployees();
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @GetMapping(value="/pages")
