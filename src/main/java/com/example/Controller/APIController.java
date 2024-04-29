@@ -7,12 +7,16 @@ import org.springframework.web.bind.annotation.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+
+import static org.aspectj.util.FileUtil.deleteContents;
 
 @RestController
 @RequestMapping(value="/api/v1/practice")
@@ -402,7 +406,96 @@ public class APIController {
         return basicSalary + da + hra;
     }
 
-    //**   http://localhost:9999/springboot_restapi/api/v1/practice/sum-of-array?numbers=1,2,3,4,5   **//
+    //**  http://localhost:9999/springboot_restapi/api/v1/practice/read-file?filePath=C:/Windows/System32/drivers/etc/hosts
+    @GetMapping(value="/read-file")
+    public String readFile(@RequestParam String filePath) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(filePath)));
+    }
+
+    //**  http://localhost:9999/springboot_restapi/api/v1/practice/write-file?filePath=  &content=
+    @PostMapping(value="/write-file")
+    public void writeFile(@RequestParam String filePath, @RequestParam String content) throws IOException {
+        Files.write(Paths.get(filePath), content.getBytes());
+    }
+
+    //**  http://localhost:9999/springboot_restapi/api/v1/practice/list-files?directoryPath=C:/Users/mwin2/Desktop/
+    @GetMapping(value="/list-files")
+    public String[] listFiles(@RequestParam String directoryPath) {
+        File directory = new File(directoryPath);
+        return directory.list();
+    }
+
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/copy-file?sourcePath=C:/Users/mwin2/Desktop/dal-backend-api&destinationPath=C:/Users/mwin2/Desktop/veeranji
+    @PostMapping(value="/copy-file")
+    public void copyFile(@RequestParam String sourcePath, @RequestParam String destinationPath) throws IOException {
+        Path source = Paths.get(sourcePath);
+        Path destination = Paths.get(destinationPath);
+        Files.copy(source, destination);
+    }
+
+   //** http://localhost:9999/springboot_restapi/api/v1/practice/move-file?sourcePath=C:/Users/mwin2/Desktop/dal-backend-api&destinationPath=C:/Users/mwin2/Desktop/veeranji
+    @PostMapping(value="/move-file")
+    public void moveFile(@RequestParam String sourcePath, @RequestParam String destinationPath) throws IOException {
+        Path source = Paths.get(sourcePath);
+        Path destination = Paths.get(destinationPath);
+        Files.move(source, destination);
+    }
+
+    //**  http://localhost:9999/springboot_restapi/api/v1/practice/file-exists?filePath=C:/Windows/System32/drivers/etc/hosts
+    @GetMapping(value="/file-exists")
+    public boolean doesFileExist(@RequestParam String filePath) {
+        File file = new File(filePath);
+        return file.exists();
+    }
+
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/delete-directory?directoryPath=C:/Users/mwin2/Desktop/veeranji
+    @DeleteMapping(value="/delete-directory")
+    public void deleteDirectory(@RequestParam String directoryPath) {
+        File directory = new File(directoryPath);
+        if (directory.exists()) {
+            deleteContents(directory);
+            directory.delete();
+        }
+    }
+
+    //**  http://localhost:9999/springboot_restapi/api/v1/practice/rename-directory?oldPath=C:/Users/mwin2/Desktop/veeranji
+    @PutMapping(value="/rename-directory")
+    public void renameDirectory(@RequestParam String oldPath, @RequestParam String newPath) {
+        File oldDir = new File(oldPath);
+        File newDir = new File(newPath);
+        oldDir.renameTo(newDir);
+    }
+
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/directory-exists?directoryPath=C:/Users/mwin2/Desktop/veeranji
+    @GetMapping(value="/directory-exists")
+    public boolean doesDirectoryExist(@RequestParam String directoryPath) {
+        File directory = new File(directoryPath);
+        return directory.exists() && directory.isDirectory();
+    }
+
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/file-last-modified-time?filePath=C:/Windows/System32/drivers/etc/hosts
+    @GetMapping(value="/file-last-modified-time")
+    public long getFileLastModifiedTime(@RequestParam String filePath) {
+        File file = new File(filePath);
+        return file.lastModified();
+    }
+
+    //**   http://localhost:9999/springboot_restapi/api/v1/practice/is-file?path=C:/Users/mwin2/Desktop/veeranji
+    //Checking if a given path corresponds to a file or a directory.
+    @GetMapping(value="/is-file")
+    public boolean isFile(@RequestParam String path) {
+        File file = new File(path);
+        return file.isFile();
+    }
+
+    //**    http://localhost:9999/springboot_restapi/api/v1/practice/is-directory?path=C:/Users/mwin2/Desktop/veeranji
+    @GetMapping(value="/is-directory")
+    public boolean isDirectory(@RequestParam String path) {
+        File file = new File(path);
+        return file.isDirectory();
+    }
+
+        //**   http://localhost:9999/springboot_restapi/api/v1/practice/sum-of-array?numbers=1,2,3,4,5   **//
     /*@PostMapping(value="/sum-of-array")
     public int calculateSumOfArray(@RequestParam List<Integer> numbers) {
         return numbers.stream().mapToInt(Integer::intValue).sum();
