@@ -11,4 +11,6 @@ public interface StudentService {
     public void deleteStudent(long id);
     public Student getStudent(long id);
     public List<Student> getAllStudents();
+    public List<String> getStudentsByName();
+    public List<Integer> getStudentByAge();
 }

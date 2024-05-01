@@ -41,4 +41,14 @@ public class StudentServiceImpl implements StudentService{
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
+
+    @Override
+    public List<String> getStudentsByName() {
+        return studentRepository.findByName();
+    }
+
+    @Override
+    public List<Integer> getStudentByAge() {
+        return studentRepository.findbyAge();
+    }
 }

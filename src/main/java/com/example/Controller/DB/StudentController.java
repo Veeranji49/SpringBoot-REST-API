@@ -50,4 +50,25 @@ public class StudentController {
         List<Student> students = studentService.getAllStudents();
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
+
+    ////   Retrieving specific Columns   ////
+
+    @GetMapping(value="/students-names")
+    public ResponseEntity<List<String>> getStudentNames(){
+        List<String> students = studentService.getStudentsByName();
+        return new ResponseEntity<>(students,HttpStatus.OK);
+    }
+
+    @GetMapping(value="/students-age")
+    public ResponseEntity<List<Integer>> getStudentAge(){
+        List<Integer> students = studentService.getStudentByAge();
+        return new ResponseEntity<>(students,HttpStatus.OK);
+    }
+
+    @PutMapping(value="/add-new-student")
+    public ResponseEntity<Student> addNewStudent(@RequestBody  Student student) {
+        Student std = studentService.createStudent(student);
+        return new ResponseEntity<>(std, HttpStatus.CREATED);
+    }
+
 }
