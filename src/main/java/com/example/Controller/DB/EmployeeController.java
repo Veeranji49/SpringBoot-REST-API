@@ -73,12 +73,14 @@ public class EmployeeController {
     }
 
     @GetMapping(value="/pages")
+    //@ApiOperation("Getting pageable resources")
     public ResponseEntity<Page<Employee>> getPages(Pageable pageable) {
         Page<Employee> pages = employeeService.findAll(pageable);
         return ResponseEntity.ok().body(pages);
     }
 
     @GetMapping(value="/count")
+    //@ApiOperation("getting employees count")
     public ResponseEntity<Long> count() {
         long count = employeeService.getEmployeesCount();
         return new ResponseEntity<>(count, HttpStatus.OK);
