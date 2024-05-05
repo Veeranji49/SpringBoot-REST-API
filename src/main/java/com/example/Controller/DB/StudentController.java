@@ -53,18 +53,21 @@ public class StudentController {
 
     ////   Retrieving specific Columns   ////
 
+    //**    http://localhost:9999/springboot_restapi/api/v1/students/students-names
     @GetMapping(value="/students-names")
     public ResponseEntity<List<String>> getStudentNames(){
         List<String> students = studentService.getStudentsByName();
         return new ResponseEntity<>(students,HttpStatus.OK);
     }
 
+    //***   http://localhost:9999/springboot_restapi/api/v1/students/students-age
     @GetMapping(value="/students-age")
     public ResponseEntity<List<Integer>> getStudentAge(){
         List<Integer> students = studentService.getStudentByAge();
         return new ResponseEntity<>(students,HttpStatus.OK);
     }
 
+    //**  http://localhost:9999/springboot_restapi/api/v1/students/add-new-student
     @PutMapping(value="/add-new-student")
     public ResponseEntity<Student> addNewStudent(@RequestBody  Student student) {
         Student std = studentService.createStudent(student);
