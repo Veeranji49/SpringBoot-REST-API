@@ -46,7 +46,7 @@ public class StudentAddressController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    ////  Retrieving Specifice address of students   ////
+    ////  Retrieving Specific address of students   ////
 
     @GetMapping(value="/student-streets")
     public ResponseEntity<List<String>> getStudentStreets() {
@@ -61,5 +61,10 @@ public class StudentAddressController {
     @GetMapping(value="/student-state")
     public ResponseEntity<List<String>> getStudentState() {
         return ResponseEntity.ok(studentAddressService.getState());
+    }
+
+    @GetMapping(value="/student-addresses")
+    public ResponseEntity<List<String>> getStudentAddresses() {
+        return ResponseEntity.ok(studentAddressService.findByStreetSate());
     }
 }

@@ -57,4 +57,9 @@ public class StudentAddressServiceImpl implements StudentAddressService {
     public List<String> getState() {
         return studentAddressRepository.findByState();
     }
+
+    @Override
+    public List<String> findByStreetSate() {
+        return studentAddressRepository.findByStreetStateAndCity();
+    }
 }

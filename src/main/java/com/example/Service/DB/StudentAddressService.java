@@ -13,4 +13,5 @@ public interface StudentAddressService {
     public List<String> getStreet();
     public List<String> getCity();
     public List<String> getState();
+    public List<String> findByStreetSate();
 }

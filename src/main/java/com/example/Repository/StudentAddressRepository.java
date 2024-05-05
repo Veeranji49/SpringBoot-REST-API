@@ -19,4 +19,7 @@ public interface StudentAddressRepository extends JpaRepository<StudentAddress, 
 
     @Query("SELECT state FROM StudentAddress ")
     List<String> findByState();
+
+    @Query("SELECT street,city,state FROM StudentAddress ")
+    List<String> findByStreetStateAndCity();
 }
