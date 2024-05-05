@@ -28,9 +28,8 @@ public class EmployeeController {
 
     @GetMapping(value="/msg")
     //@ApiOperation("Get a greeting message")
-    public String msg()
-    {
-        return "Welcome to SpringBoot REST API Application";
+    public ResponseEntity<String> msg(){
+        return new ResponseEntity<>("Welcome to SpringBoot REST API Application", HttpStatus.OK);
     }
 
     @PostMapping(value="/save")
