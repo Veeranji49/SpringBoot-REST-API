@@ -26,4 +26,6 @@ public interface EmployeeService {
 
     public List<String> findAllEmployeeNamesLocations();
 
+    public List<Double> findAllEmployeeSalary();
+
 }

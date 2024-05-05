@@ -16,4 +16,7 @@ public interface EmployeeRepository extends JpaRepository<Employee,Long> {
     @Query("SELECT name,location FROM Employee ")
     public List<String> findNameLocation();
 
+    @Query("SELECT salary FROM Employee")
+    public List<Double> findSalary();
+
 }

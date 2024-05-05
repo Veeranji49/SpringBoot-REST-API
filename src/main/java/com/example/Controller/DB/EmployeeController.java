@@ -96,4 +96,10 @@ public class EmployeeController {
         List<String> employee = employeeService.findAllEmployeeNamesEmail();
         return new ResponseEntity<>(employee,HttpStatus.OK);
     }
+
+    @GetMapping(value="/employee-salary")
+    public ResponseEntity<List<Double>> findEmployeeSalary(){
+        List<Double> employee = employeeService.findAllEmployeeSalary();
+        return new ResponseEntity<>(employee,HttpStatus.OK);
+    }
 }

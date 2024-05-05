@@ -73,4 +73,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.findNameLocation();
     }
 
+    @Override
+    public List<Double> findAllEmployeeSalary() {
+        return employeeRepository.findSalary();
+    }
+
 }
