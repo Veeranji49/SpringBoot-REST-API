@@ -63,4 +63,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.count();
     }
 
+    @Override
+    public List<String> findAllEmployeeNamesEmail() {
+        return employeeRepository.findNameEmail();
+    }
+
+    @Override
+    public List<String> findAllEmployeeNamesLocations() {
+        return employeeRepository.findNameLocation();
+    }
+
 }

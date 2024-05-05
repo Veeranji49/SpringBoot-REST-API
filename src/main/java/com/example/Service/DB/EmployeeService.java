@@ -22,4 +22,8 @@ public interface EmployeeService {
 
     public long getEmployeesCount();
 
+    public List<String> findAllEmployeeNamesEmail();
+
+    public List<String> findAllEmployeeNamesLocations();
+
 }

@@ -85,4 +85,16 @@ public class EmployeeController {
         long count = employeeService.getEmployeesCount();
         return new ResponseEntity<>(count, HttpStatus.OK);
     }
+
+    @GetMapping(value="/employee-name-location")
+    public ResponseEntity<List<String>> findNameLocation(){
+        List<String> employee = employeeService.findAllEmployeeNamesLocations();
+        return new ResponseEntity<>(employee,HttpStatus.OK);
+    }
+
+    @GetMapping(value="/employee-name-email")
+    public ResponseEntity<List<String>> findEmployeeNameEmail(){
+        List<String> employee = employeeService.findAllEmployeeNamesEmail();
+        return new ResponseEntity<>(employee,HttpStatus.OK);
+    }
 }
