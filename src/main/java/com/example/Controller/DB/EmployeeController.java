@@ -85,6 +85,8 @@ public class EmployeeController {
         return new ResponseEntity<>(count, HttpStatus.OK);
     }
 
+    //// Retrieving specific details of Employee table  ////
+
     @GetMapping(value="/employee-name-location")
     public ResponseEntity<List<String>> findNameLocation(){
         List<String> employee = employeeService.findAllEmployeeNamesLocations();
