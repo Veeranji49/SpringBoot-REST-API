@@ -1,6 +1,6 @@
-package com.example.Service.DB;
+package com.example.Service.DB.OneToOne;
 
-import com.example.Entity.DB.Student;
+import com.example.Entity.DB.OneToOne.Student;
 
 import java.util.List;
 

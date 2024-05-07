@@ -1,7 +1,6 @@
-package com.example.Repository;
+package com.example.Repository.OneToOne;
 
-import com.example.Entity.DB.Student;
-import com.example.Entity.DB.StudentAddress;
+import com.example.Entity.DB.OneToOne.StudentAddress;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

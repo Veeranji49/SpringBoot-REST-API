@@ -1,7 +1,7 @@
-package com.example.Controller.DB;
+package com.example.Controller.DB.OneToOne;
 
-import com.example.Entity.DB.StudentAddress;
-import com.example.Service.DB.StudentAddressService;
+import com.example.Entity.DB.OneToOne.StudentAddress;
+import com.example.Service.DB.OneToOne.StudentAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

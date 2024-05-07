@@ -1,7 +1,7 @@
-package com.example.Service.DB;
+package com.example.Service.DB.OneToMany;
 
-import com.example.Entity.DB.Post;
-import com.example.Repository.PostRepository;
+import com.example.Entity.DB.OneToMany.Post;
+import com.example.Repository.OneToMany.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,14 +1,14 @@
-package com.example.Service.DB;
+package com.example.Service.DB.OneToOne;
 
-import com.example.Entity.DB.Student;
-import com.example.Repository.StudentRepository;
+import com.example.Entity.DB.OneToOne.Student;
+import com.example.Repository.OneToOne.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentRepository studentRepository;

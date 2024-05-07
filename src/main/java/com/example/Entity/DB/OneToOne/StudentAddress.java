@@ -1,4 +1,4 @@
-package com.example.Entity.DB;
+package com.example.Entity.DB.OneToOne;
 
 import javax.persistence.*;
 

@@ -1,7 +1,7 @@
-package com.example.Service.DB;
+package com.example.Service.DB.OneToOne;
 
-import com.example.Entity.DB.StudentAddress;
-import com.example.Repository.StudentAddressRepository;
+import com.example.Entity.DB.OneToOne.StudentAddress;
+import com.example.Repository.OneToOne.StudentAddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

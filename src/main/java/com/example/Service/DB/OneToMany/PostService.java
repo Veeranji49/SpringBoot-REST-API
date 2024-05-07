@@ -1,6 +1,6 @@
-package com.example.Service.DB;
+package com.example.Service.DB.OneToMany;
 
-import com.example.Entity.DB.Post;
+import com.example.Entity.DB.OneToMany.Post;
 
 import java.util.List;
 
