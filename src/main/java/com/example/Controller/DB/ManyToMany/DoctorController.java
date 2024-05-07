@@ -46,4 +46,13 @@ public class DoctorController {
         Doctor d = doctorService.getDoctor(id);
         return new ResponseEntity<>(d, HttpStatus.OK);
     }
+
+
+    /////  Retrieving specific columns   ////
+
+    @GetMapping(value="/getall-name-category")
+    public ResponseEntity<List<String>> getNamesCategories(){
+        List<String> namescategories = doctorService.getNameCategory();
+        return new ResponseEntity<>(namescategories, HttpStatus.OK);
+    }
 }

@@ -43,4 +43,9 @@ public class DoctorServiceImpl implements DoctorService {
     public List<Doctor> getAllDoctors() {
         return doctorRepository.findAll();
     }
+
+    @Override
+    public List<String> getNameCategory() {
+        return doctorRepository.findNameCategory();
+    }
 }

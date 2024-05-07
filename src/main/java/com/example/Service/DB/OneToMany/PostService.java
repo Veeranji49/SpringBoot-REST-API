@@ -11,4 +11,6 @@ public interface PostService {
     public List<Post> getAllPosts();
     public void deletePost(long id);
     public Post updatePost(Post post, long id);
+    public List<String> findAuhorTitles();
+    public List<String> findDescriptions();
 }

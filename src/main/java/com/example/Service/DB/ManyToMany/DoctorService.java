@@ -11,4 +11,5 @@ public interface DoctorService {
     public Doctor getDoctor(long id);
     public void deleteDoctor(long id);
     public List<Doctor> getAllDoctors();
+    public List<String> getNameCategory();
 }

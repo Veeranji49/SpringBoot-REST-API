@@ -42,4 +42,14 @@ public class PostServiceImpl implements PostService {
         post1.setComments(post.getComments());
         return postRepository.save(post1);
     }
+
+    @Override
+    public List<String> findAuhorTitles() {
+        return postRepository.findAllAuthorsTitles();
+    }
+
+    @Override
+    public List<String> findDescriptions() {
+        return postRepository.findAllDescriptions();
+    }
 }

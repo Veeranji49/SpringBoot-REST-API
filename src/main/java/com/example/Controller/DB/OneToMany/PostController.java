@@ -45,4 +45,33 @@ public class PostController {
         Post p = postService.updatePost(post, id);
         return new ResponseEntity<>(p, HttpStatus.OK);
     }
+
+    ////  Retrieving specific columns from the database  ////
+
+    @GetMapping(value = "/getall-authors-titles")
+    public ResponseEntity<List<String>> getAuthorsTitles(){
+        List<String> authorsTitles = postService.findAuhorTitles();
+        return new ResponseEntity<>(authorsTitles, HttpStatus.OK);
+    }
+
+    @GetMapping(value="/getall-descriptions")
+    public ResponseEntity<List<String>> getallDescriptions(){
+        List<String> descriptions = postService.findDescriptions();
+        return new ResponseEntity<>(descriptions, HttpStatus.OK);
+    }
 }
+/*
+{
+  "title": "family",
+  "description": "family is everything",
+  "author": "veeru",
+  "comments": [
+    {
+      "text": "family is love"
+    },
+    {
+      "text": "family is care"
+    }
+  ]
+}
+ */
