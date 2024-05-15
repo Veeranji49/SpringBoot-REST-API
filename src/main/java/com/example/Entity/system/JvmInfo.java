@@ -1,6 +1,8 @@
 package com.example.Entity.system;
 
-public class JvmInfo {
+import java.io.Serializable;
+
+public class JvmInfo implements Serializable {
 
 
     private String jvmName;

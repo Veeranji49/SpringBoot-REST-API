@@ -1,9 +1,10 @@
 package com.example.Entity.system;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-public class SystemInfo {
+public class SystemInfo implements Serializable {
 
     private double cpuUsagePercentage;
     private String ipAddress;

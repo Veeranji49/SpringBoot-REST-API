@@ -27,7 +27,7 @@ public class SystemInfoController {
         return "Welcome to the Information of the System";
     }
 
-    @GetMapping("/systemInfo")
+    @GetMapping("/system-info")
     //@ApiOperation("To Retrieving the system resources")
     public SystemInfo getSystemInfo() {
         return systemInfoService.getSystemInfo();
