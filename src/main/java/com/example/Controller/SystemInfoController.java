@@ -3,6 +3,8 @@ package com.example.Controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,14 +24,16 @@ public class SystemInfoController {
 
     @GetMapping(value="/system-msg")
     //@ApiOperation("Greeting message by system")
-    public String msg()
-    {
-        return "Welcome to the Information of the System";
+    public ResponseEntity<String> getResponse(){
+        String response = "Welcome to Information of the System";
+        logger.info("response: {}", response);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/system-info")
     //@ApiOperation("To Retrieving the system resources")
     public SystemInfo getSystemInfo() {
+        logger.info("MethodName: {}", "getSystemInfo");
         return systemInfoService.getSystemInfo();
     }
 }

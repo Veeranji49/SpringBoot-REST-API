@@ -24,18 +24,22 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    // for Logging
     private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
     @GetMapping(value="/msg")
     //@ApiOperation("Get a greeting message")
     public ResponseEntity<String> msg(){
-        return new ResponseEntity<>("Welcome to SpringBoot REST API Application", HttpStatus.OK);
+        String response = "Welcome to Spring Boot REST API";
+        logger.debug("response: {}", response);
+        return new ResponseEntity<>(response,HttpStatus.OK);
     }
 
     @PostMapping(value="/save")
     //@ApiOperation("To posting the employee details")
     public ResponseEntity<Employee> savee(@Valid @RequestBody Employee employee) {
         Employee emp = employeeService.saveEmployee(employee);
+        logger.debug("methodName: {}","savee","employee: {}", employee);
         return new ResponseEntity<>(emp, HttpStatus.CREATED);
     }
 
@@ -44,7 +48,9 @@ public class EmployeeController {
     public ResponseEntity<String> updatee(@Valid @RequestBody Employee employee, @PathVariable long id)
     {
         employeeService.updateEmployee(employee,id);
-        return  ResponseEntity.ok("Updated successfully");
+        String response = "Updated Successfully";
+        logger.debug("methodName:{}","updatee", "response: {}", response, "employee: {}", employee, "id: {}",id);
+        return  ResponseEntity.ok(response);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -52,7 +58,9 @@ public class EmployeeController {
     public ResponseEntity<String> deletee(@PathVariable long id)
     {
        employeeService.deleteEmployee(id);
-       return  ResponseEntity.ok("deleted successfully");
+       String msg = "Deleted Successfully";
+       logger.info( "Response :{}", msg , "methodName: {}", "deletee");
+       return  ResponseEntity.ok(msg);
     }
 
     @GetMapping(value="/getone/{id}")
@@ -60,6 +68,7 @@ public class EmployeeController {
     public ResponseEntity<Employee> getOne(@PathVariable long id)
     {
         Employee emp = employeeService.getOneEmployee(id);
+        logger.info("methodName: {}", "getOne", "id: {}", id);
         return new ResponseEntity<>(emp, HttpStatus.OK);
     }
 
@@ -68,6 +77,7 @@ public class EmployeeController {
     public ResponseEntity<List<Employee>> getall()
     {
         List<Employee> list = employeeService.getAllEmployees();
+        logger.info("methodName: {}", "getall");
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
@@ -75,6 +85,7 @@ public class EmployeeController {
     //@ApiOperation("Getting pageable resources")
     public ResponseEntity<Page<Employee>> getPages(Pageable pageable) {
         Page<Employee> pages = employeeService.findAll(pageable);
+        logger.info("methodName: {}", "getPages", "pageable: {}", pageable);
         return ResponseEntity.ok().body(pages);
     }
 
@@ -82,6 +93,7 @@ public class EmployeeController {
     //@ApiOperation("getting employees count")
     public ResponseEntity<Long> count() {
         long count = employeeService.getEmployeesCount();
+        logger.info("methodName: {}", "count");
         return new ResponseEntity<>(count, HttpStatus.OK);
     }
 
@@ -90,18 +102,21 @@ public class EmployeeController {
     @GetMapping(value="/employee-name-location")
     public ResponseEntity<List<String>> findNameLocation(){
         List<String> employee = employeeService.findAllEmployeeNamesLocations();
+        logger.info("methodName: {}", "findNameLocation");
         return new ResponseEntity<>(employee,HttpStatus.OK);
     }
 
     @GetMapping(value="/employee-name-email")
     public ResponseEntity<List<String>> findEmployeeNameEmail(){
         List<String> employee = employeeService.findAllEmployeeNamesEmail();
+        logger.info("methodName: {}", "findEmployeeNameEmail");
         return new ResponseEntity<>(employee,HttpStatus.OK);
     }
 
     @GetMapping(value="/employee-salary")
     public ResponseEntity<List<Double>> findEmployeeSalary(){
         List<Double> employee = employeeService.findAllEmployeeSalary();
+        logger.info("methodName: {}", "findEmployeeSalary");
         return new ResponseEntity<>(employee,HttpStatus.OK);
     }
 }
