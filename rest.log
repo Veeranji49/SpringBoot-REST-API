@@ -42,4 +42,71 @@
 ""2024-05-16 15:15:39 [http-nio-9999-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
 ""2024-05-16 15:15:39 [http-nio-9999-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["Updated Successfully"]
 ""2024-05-16 15:15:39 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+""2024-05-16 15:24:39 [http-nio-9999-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - PUT "/springboot_restapi/api/v1/employee/msg", parameters={}
+""2024-05-16 15:24:39 [http-nio-9999-exec-5] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.example.Exception.GlobalExceptionHandler#handleGlobalException(Exception, WebRequest)
+""2024-05-16 15:24:39 [http-nio-9999-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+""2024-05-16 15:24:39 [http-nio-9999-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ErrorDetails [timestamp=Thu May 16 15:24:39 IST 2024, message=Request method 'PUT' not supported, de (truncated)...]
+""2024-05-16 15:24:39 [http-nio-9999-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+""2024-05-16 15:24:39 [http-nio-9999-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 500 INTERNAL_SERVER_ERROR
+""2024-05-16 15:24:45 [http-nio-9999-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/springboot_restapi/api/v1/employee/msg", parameters={}
+""2024-05-16 15:24:45 [http-nio-9999-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.Controller.DB.EmployeeController#msg()
+""2024-05-16 15:24:45 [http-nio-9999-exec-7] DEBUG c.e.Controller.DB.EmployeeController - response: Welcome to Spring Boot REST API
+""2024-05-16 15:24:45 [http-nio-9999-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+""2024-05-16 15:24:45 [http-nio-9999-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["Welcome to Spring Boot REST API"]
+""2024-05-16 15:24:45 [http-nio-9999-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+""2024-05-16 15:26:07 [http-nio-9999-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/springboot_restapi/api/v1/system-details/system-info", parameters={}
+""2024-05-16 15:26:07 [http-nio-9999-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.Controller.SystemInfoController#getSystemInfo()
+""2024-05-16 15:26:07 [http-nio-9999-exec-10] INFO  c.e.Controller.SystemInfoController - MethodName: getSystemInfo
+""2024-05-16 15:26:08 [http-nio-9999-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+""2024-05-16 15:26:08 [http-nio-9999-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.example.Entity.system.SystemInfo@3d6fcf5f]
+""2024-05-16 15:26:08 [http-nio-9999-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+""2024-05-16 15:41:39 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2024-05-16 15:41:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2024-05-16 15:41:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2024-05-16 16:28:26 [restartedMain] INFO  c.e.SpringBootRestApiApplication - Starting SpringBootRestApiApplication using Java 17.0.9 on lenovo with PID 3456 (C:\Users\mwin2\Desktop\SpringBoot-REST-API\target\classes started by mwin2 in C:\Users\mwin2\Desktop\SpringBoot-REST-API)
+""2024-05-16 16:28:26 [restartedMain] DEBUG c.e.SpringBootRestApiApplication - Running with Spring Boot v2.6.2, Spring v5.3.14
+""2024-05-16 16:28:26 [restartedMain] INFO  c.e.SpringBootRestApiApplication - No active profile set, falling back to default profiles: default
+""2024-05-16 16:28:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+""2024-05-16 16:28:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+""2024-05-16 16:28:27 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2024-05-16 16:28:27 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 9 JPA repository interfaces.
+""2024-05-16 16:28:28 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+""2024-05-16 16:28:28 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2024-05-16 16:28:28 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+""2024-05-16 16:28:28 [restartedMain] INFO  o.a.c.c.C.[.[.[/springboot_restapi] - Initializing Spring embedded WebApplicationContext
+""2024-05-16 16:28:28 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1818 ms
+""2024-05-16 16:28:28 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2024-05-16 16:28:28 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.3.Final
+""2024-05-16 16:28:28 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2024-05-16 16:28:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2024-05-16 16:28:29 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2024-05-16 16:28:29 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2024-05-16 16:28:30 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2024-05-16 16:28:30 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2024-05-16 16:28:30 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2024-05-16 16:28:30 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+""2024-05-16 16:28:31 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 123 mappings in 'requestMappingHandlerMapping'
+""2024-05-16 16:28:31 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+""2024-05-16 16:28:31 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+""2024-05-16 16:28:31 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+""2024-05-16 16:28:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/springboot_restapi'
+""2024-05-16 16:28:31 [restartedMain] INFO  c.e.SpringBootRestApiApplication - Started SpringBootRestApiApplication in 5.589 seconds (JVM running for 6.99)
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] INFO  o.a.c.c.C.[.[.[/springboot_restapi] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@54f21757
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@79c1db89
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/springboot_restapi/api/v1/order/getall-orders", parameters={}
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.Controller.DB.ManyToOne.OrderController#getallOrders()
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] INFO  c.e.C.DB.ManyToOne.OrderController - MethodName : getallOrders
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.example.Entity.DB.ManyToOne.Order@2822d29d, com.example.Entity.DB.ManyToOne.Order@580ad4b5, com (truncated)...]
+""2024-05-16 16:28:53 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+""2024-05-16 16:32:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2024-05-16 16:32:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2024-05-16 16:32:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
 "
