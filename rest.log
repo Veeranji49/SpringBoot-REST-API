@@ -1,0 +1,45 @@
+"2024-05-16 15:15:22 [restartedMain] INFO  c.e.SpringBootRestApiApplication - Starting SpringBootRestApiApplication using Java 17.0.9 on lenovo with PID 27484 (C:\Users\mwin2\Desktop\SpringBoot-REST-API\target\classes started by mwin2 in C:\Users\mwin2\Desktop\SpringBoot-REST-API)
+""2024-05-16 15:15:22 [restartedMain] DEBUG c.e.SpringBootRestApiApplication - Running with Spring Boot v2.6.2, Spring v5.3.14
+""2024-05-16 15:15:22 [restartedMain] INFO  c.e.SpringBootRestApiApplication - No active profile set, falling back to default profiles: default
+""2024-05-16 15:15:22 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+""2024-05-16 15:15:22 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+""2024-05-16 15:15:23 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2024-05-16 15:15:23 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 113 ms. Found 9 JPA repository interfaces.
+""2024-05-16 15:15:23 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+""2024-05-16 15:15:23 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2024-05-16 15:15:23 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+""2024-05-16 15:15:24 [restartedMain] INFO  o.a.c.c.C.[.[.[/springboot_restapi] - Initializing Spring embedded WebApplicationContext
+""2024-05-16 15:15:24 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1705 ms
+""2024-05-16 15:15:24 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2024-05-16 15:15:24 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.3.Final
+""2024-05-16 15:15:24 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2024-05-16 15:15:24 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2024-05-16 15:15:24 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2024-05-16 15:15:25 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2024-05-16 15:15:26 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2024-05-16 15:15:26 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2024-05-16 15:15:26 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2024-05-16 15:15:26 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+""2024-05-16 15:15:26 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 123 mappings in 'requestMappingHandlerMapping'
+""2024-05-16 15:15:26 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+""2024-05-16 15:15:26 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+""2024-05-16 15:15:27 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+""2024-05-16 15:15:27 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path '/springboot_restapi'
+""2024-05-16 15:15:27 [restartedMain] INFO  c.e.SpringBootRestApiApplication - Started SpringBootRestApiApplication in 5.233 seconds (JVM running for 6.361)
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] INFO  o.a.c.c.C.[.[.[/springboot_restapi] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@16a3b2cc
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@62d7f4a4
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - PUT "/springboot_restapi/api/v1/employee/update/7", parameters={}
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.Controller.DB.EmployeeController#updatee(Employee, long)
+""2024-05-16 15:15:38 [http-nio-9999-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Employee{id=0, name='veeru', salary=457955.0, age=22, email='veeresh@gmail.com', is_healthy=true, lo (truncated)...]
+""2024-05-16 15:15:39 [http-nio-9999-exec-2] DEBUG c.e.Controller.DB.EmployeeController - methodName:updatee
+""2024-05-16 15:15:39 [http-nio-9999-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+""2024-05-16 15:15:39 [http-nio-9999-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["Updated Successfully"]
+""2024-05-16 15:15:39 [http-nio-9999-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+"
