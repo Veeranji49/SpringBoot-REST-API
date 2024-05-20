@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
       <!--<version>2.6.2</version>-->
-        <version>2.6.2</version> <!--for swagger configuration =  version - 2.5.4    -->
+        <version>2.5.4</version> <!--for swagger configuration =  version - 2.5.4    -->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -113,82 +113,54 @@
             <version>0.0.20131108.vaadin1</version>
             <scope>compile</scope>
         </dependency>-->
+      <!--  <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.jsondoc/jsondoc-core -->
+        <dependency>
+            <groupId>org.jsondoc</groupId>
+            <artifactId>jsondoc-core</artifactId>
+            <version>1.2.23</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.jsondoc/jsondoc-springmvc -->
+        <dependency>
+            <groupId>org.jsondoc</groupId>
+            <artifactId>jsondoc-springmvc</artifactId>
+            <version>1.2.23</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jsondoc/jsondoc-ui -->
+        <dependency>
+            <groupId>org.jsondoc</groupId>
+            <artifactId>jsondoc-ui</artifactId>
+            <version>1.2.23</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.jsondoc</groupId>
+            <artifactId>spring-boot-starter-jsondoc</artifactId>
+            <version>1.2.23</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jsondoc/jsondoc-ui-webjar -->
+        <dependency>
+            <groupId>org.jsondoc</groupId>
+            <artifactId>jsondoc-ui-webjar</artifactId>
+            <version>1.2.23</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!--<plugin>
-                <groupId>com.github.wvengen</groupId>
-                <artifactId>proguard-maven-plugin</artifactId>
-                <version>2.2.0</version> &lt;!&ndash; Use the latest compatible version &ndash;&gt;
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>proguard</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <proguardVersion>7.1.1</proguardVersion> &lt;!&ndash; Use the latest version of ProGuard &ndash;&gt;
-                    <obfuscate>true</obfuscate>
-                    <injar>${project.build.finalName}.jar</injar>
-                    <outjar>${project.build.finalName}-obfuscated.jar</outjar>
-                    <outputDirectory>${project.build.directory}</outputDirectory>
-                    <options>
-                        <option>-include proguard.conf</option>
-                    </options>
-                </configuration>
-            </plugin>-->
-                    <plugin>
-                        <groupId>com.github.wvengen</groupId>
-                        <artifactId>proguard-maven-plugin</artifactId>
-                        <version>2.2.0</version>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>proguard</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <proguardVersion>7.1.1</proguardVersion> <!-- Make sure to use a compatible version with Java 17 -->
-                                <options>
-                                    <option>-keep class com.example.** { *; }</option> <!-- Keep specific classes unobfuscated -->
-                                    <option>-dontoptimize</option> <!-- Optional: Turn off optimization to make debugging easier -->
-                                    <!-- Add more options as per your requirements -->
-                                </options>
-                        </configuration>
-                    </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.2.1</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.puppycrawl.tools</groupId>
-                        <artifactId>checkstyle</artifactId>
-                        <version>8.45</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>checkstyle-check</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- Specify your Checkstyle configuration file -->
-                    <configLocation>checkstyle/checkstyle.xml</configLocation>
-                    <!-- Fail the build if Checkstyle errors are found -->
-                    <failsOnError>true</failsOnError>
-                </configuration>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
-
 </project>

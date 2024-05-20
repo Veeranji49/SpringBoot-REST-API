@@ -1,5 +1,6 @@
 package com.example.Entity.system;
 
+
 import java.io.Serializable;
 
 public class DiskInfo implements Serializable {
