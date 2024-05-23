@@ -1,5 +1,7 @@
 package com.example.Entity.DB.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +18,7 @@ public class Doctor {
     private int age;
     private String hospital_name;
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name="patient_doctor", joinColumns ={
             @JoinColumn(name="doctor_id",referencedColumnName = "id",

@@ -65,4 +65,20 @@ public class DoctorController {
         logger.info("MethodName: {}", "getNamesCategories", "NameCategory: {}", namescategories);
         return new ResponseEntity<>(namescategories, HttpStatus.OK);
     }
+
+    @GetMapping(value = "/get-doctors-with-no-patients")
+    public ResponseEntity<List<Doctor>> getDoctorsWithNoPatients() {
+        List<Doctor> doctors = doctorService.getDoctorsWithNoPatients();
+        return new ResponseEntity<>(doctors, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/assign-patient")
+    public ResponseEntity<Doctor> assignPatientToDoctor(@RequestParam long doctorId, @RequestParam long patientId) {
+        Doctor doctor = doctorService.assignPatientToDoctor(doctorId, patientId);
+        if (doctor != null) {
+            return new ResponseEntity<>(doctor, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }

@@ -12,4 +12,6 @@ public interface DoctorService {
     public void deleteDoctor(long id);
     public List<Doctor> getAllDoctors();
     public List<String> getNameCategory();
+    public List<Doctor> getDoctorsWithNoPatients();
+    public  Doctor assignPatientToDoctor(long doctorId, long patientId);
 }
