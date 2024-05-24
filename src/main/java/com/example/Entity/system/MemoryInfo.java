@@ -1,6 +1,8 @@
 package com.example.Entity.system;
 
-public class MemoryInfo {
+import java.io.Serializable;
+
+public class MemoryInfo implements Serializable {
 
     private double totalMemoryGB;
     private double usedMemoryPercentage;

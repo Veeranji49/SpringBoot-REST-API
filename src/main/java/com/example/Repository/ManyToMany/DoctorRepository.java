@@ -12,4 +12,7 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long> {
 
     @Query("SELECT name,category FROM Doctor")
     List<String> findNameCategory();
+
+    @Query("SELECT d FROM Doctor d WHERE d.patients IS EMPTY")
+    List<Doctor> findDoctorsWithNoPatients();
 }

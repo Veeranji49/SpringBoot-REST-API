@@ -7,10 +7,7 @@ import com.example.Entity.system.SystemInfo;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
-import java.lang.management.ManagementFactory;
-import java.lang.management.RuntimeMXBean;
-import java.lang.management.ThreadInfo;
-import java.lang.management.ThreadMXBean;
+import java.lang.management.*;
 import java.net.InetAddress;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -40,22 +37,26 @@ public class SystemInfoService {
             systemInfo.setHostname(localHost.getHostName());
 
             // Get Memory Information
-            Runtime runtime = Runtime.getRuntime();
-            long totalMemory = runtime.totalMemory();
-            long freeMemory = runtime.freeMemory();
-            double totalMemoryGB = totalMemory / (1024.0 * 1024.0 * 1024.0);
-            double usedMemoryPercentage = ((double)(totalMemory - freeMemory) / totalMemory) * 100;
+            long totalMemoryBytes = osBean.getTotalPhysicalMemorySize();
+            double totalMemoryGB = bytesToGB(totalMemoryBytes);  // Convert bytes to GB
+
+            MemoryMXBean memoryBean = ManagementFactory.getMemoryMXBean();
+            MemoryUsage heapMemoryUsage = memoryBean.getHeapMemoryUsage();
+            double usedMemoryGB = bytesToGB(heapMemoryUsage.getUsed());
+            double memoryUsagePercentage = (usedMemoryGB / totalMemoryGB) * 100;
             String operatingSystem = null;
-            MemoryInfo memoryInfo = new MemoryInfo(totalMemoryGB, usedMemoryPercentage,operatingSystem);
+            MemoryInfo memoryInfo = new MemoryInfo(totalMemoryGB, memoryUsagePercentage,operatingSystem);
             systemInfo.setMemoryInfo(memoryInfo);
 
             // Get Disk Information
+            // Disk usage calculation remains unchanged
             File root = new File("/");
             long totalDiskSpace = root.getTotalSpace();
+            double totalDiskSpaceGB = bytesToGB(totalDiskSpace);
+
             long freeDiskSpace = root.getFreeSpace();
-            double totalDiskSpaceGB = totalDiskSpace / (1024.0 * 1024.0 * 1024.0);
-            double usedDiskSpacePercentage = ((double)(totalDiskSpace - freeDiskSpace) / totalDiskSpace) * 100;
-            DiskInfo diskInfo = new DiskInfo(totalDiskSpaceGB, usedDiskSpacePercentage);
+            double diskUsagePercentage = ((double) (totalDiskSpace - freeDiskSpace) / totalDiskSpace) * 100;
+            DiskInfo diskInfo = new DiskInfo(totalDiskSpaceGB, bytesToGB(freeDiskSpace), diskUsagePercentage);
             systemInfo.setDiskInfo(diskInfo);
 
             // Get JVM Information
@@ -108,5 +109,8 @@ public class SystemInfoService {
         }
 
         return systemInfo;
+    }
+    private double bytesToGB(long bytes) {
+        return bytes / (1024.0 * 1024.0 * 1024.0);
     }
 }

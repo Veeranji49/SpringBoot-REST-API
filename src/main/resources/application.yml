@@ -1,7 +1,7 @@
 server:
   port: '9999'
-  servlet:
-    context-path: /springboot_restapi
+  #servlet:
+    #context-path: /springboot_restapi
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver

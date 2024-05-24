@@ -1,5 +1,8 @@
 package com.example.Entity.DB;
 
+import org.jsondoc.core.annotation.ApiObject;
+import org.jsondoc.core.annotation.ApiObjectField;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,32 +22,40 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="employees")
+@ApiObject
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiObjectField(name="Employee id", description = "Auto generated Id")
     private long id;
 
     @Column(name="e_name")
     @NotNull(message = "Name cannot be null")
     @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters")
+    @ApiObjectField(name="Employee name", description = "To get Employee name")
     private String name;
 
     @Column(name="e_salary")
+    @ApiObjectField(name="Employee Salary", description = "To get Employee Salary")
     private double salary;
 
     @Column(name="e_age")
+    @ApiObjectField(name="Employee age", description = "To get Employee age")
     private int age;
 
     @Column(name="e_email")
     @NotNull(message = "Email cannot be null")
     @Email(message = "Invalid email format")
+    @ApiObjectField(name="Employee email", description = "To get Employee email")
     private String email;
 
     @Column(name="e_health")
+    @ApiObjectField(name="Employee health", description = "To checking employee health")
     private boolean is_healthy;
 
     @Column(name="e_location")
+    @ApiObjectField(name="Employee address", description = "To get Employee address")
     private String location;
 
 

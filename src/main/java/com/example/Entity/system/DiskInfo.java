@@ -1,21 +1,42 @@
 package com.example.Entity.system;
 
-public class DiskInfo {
+
+import java.io.Serializable;
+
+public class DiskInfo implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private double totalDiskSpaceGB;
-    private double usedDiskSpacePercentage;
+    private double freeDiskSpaceGB;
+    private double diskUsagePercentage;
 
-    //PDC
-    public DiskInfo() {}
+   public DiskInfo(){
 
-    //PPC
-    public DiskInfo(double totalDiskSpaceGB, double usedDiskSpacePercentage) {
-        super();
+   }
+
+    public DiskInfo(double diskUsagePercentage, double freeDiskSpaceGB, double totalDiskSpaceGB) {
+        this.diskUsagePercentage = diskUsagePercentage;
+        this.freeDiskSpaceGB = freeDiskSpaceGB;
         this.totalDiskSpaceGB = totalDiskSpaceGB;
-        this.usedDiskSpacePercentage = usedDiskSpacePercentage;
     }
 
-    //PSM & PGM
+    public double getDiskUsagePercentage() {
+        return diskUsagePercentage;
+    }
+
+    public void setDiskUsagePercentage(double diskUsagePercentage) {
+        this.diskUsagePercentage = diskUsagePercentage;
+    }
+
+    public double getFreeDiskSpaceGB() {
+        return freeDiskSpaceGB;
+    }
+
+    public void setFreeDiskSpaceGB(double freeDiskSpaceGB) {
+        this.freeDiskSpaceGB = freeDiskSpaceGB;
+    }
+
     public double getTotalDiskSpaceGB() {
         return totalDiskSpaceGB;
     }
@@ -23,13 +44,4 @@ public class DiskInfo {
     public void setTotalDiskSpaceGB(double totalDiskSpaceGB) {
         this.totalDiskSpaceGB = totalDiskSpaceGB;
     }
-
-    public double getUsedDiskSpacePercentage() {
-        return usedDiskSpacePercentage;
-    }
-
-    public void setUsedDiskSpacePercentage(double usedDiskSpacePercentage) {
-        this.usedDiskSpacePercentage = usedDiskSpacePercentage;
-    }
-
 }

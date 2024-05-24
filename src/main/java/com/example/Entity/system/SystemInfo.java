@@ -1,24 +1,58 @@
 package com.example.Entity.system;
 
+import org.jsondoc.core.annotation.ApiObject;
+import org.jsondoc.core.annotation.ApiObjectField;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-public class SystemInfo {
+@ApiObject
+public class SystemInfo implements Serializable {
 
+    @ApiObjectField(name="Cpu Usage Percentage",description = "To Get CPU usage Percentage")
     private double cpuUsagePercentage;
+
+    @ApiObjectField(name="Ip Address", description = "To get IP address of system")
     private String ipAddress;
+
+    @ApiObjectField(name="Hostname", description = "To get Hostname of system")
     private String hostname;
+
+    @ApiObjectField(name="MemoryInfo", description = "To get Memory Information of system")
     private MemoryInfo memoryInfo;
+
+    @ApiObjectField(name="DiskInfo", description = "To get Disk Information of system")
     private DiskInfo diskInfo;
+
+    @ApiObjectField(name = "JVM Info", description = "To get JVM Information of system")
     private JvmInfo jvmInfo;
+
+    @ApiObjectField(name="Processors", description = "To get processors of system")
     private int processors;
+
+    @ApiObjectField(name="Architecture", description = "To get Architecture of system")
     private String architecture;
+
+    @ApiObjectField(name="Current Time", description = "To get Current time of system")
     private LocalDateTime currentTime;
+
+    @ApiObjectField(name="ClassLoader Details", description = "To get Class Loader details")
     private String classLoaderDetails;
+
+    @ApiObjectField(name="Thread Details", description = "To get Thread details of system")
     private Map<Thread.State, Integer> threadDetails;
+
+    @ApiObjectField(name="Environmental variables", description = "To get Environmental variables of system")
     private Map<String, String> environmentVariables;
+
+    @ApiObjectField(name="System Properties", description = "To get System Properties")
     private Map<String, String> systemProperties;
+
+    @ApiObjectField(name="Operating System", description = "To get Operating System")
     private String operatingSystem;
+
+    @ApiObjectField(name="User Home Directory", description = "To get User Home Directory")
     private String userHomeDirectory;
 
     //PDC
